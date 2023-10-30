@@ -1,11 +1,20 @@
+import FeatureSection from "@/components/FeatureSection/FeatureSection";
+import Hero from "@/components/Hero";
+
+import { Roboto } from 'next/font/google'
+const roboto = Roboto({ weight: ['100', '300', '400', '500', '700', '900'], subsets: ['latin'] });
+
+
 export default function Home() {
+
+  const backgroundStyle = {
+    backgroundImage: `url(${'imgBackground.png'})`,
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-center font-mono text-3xl lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Crea tu parche 📢
-        </p>
-      </div>
+    <main className={`bg-center bg-repeat ${roboto.className}`} /* style={backgroundStyle} */>
+      <Hero />
+      <FeatureSection />
     </main>
   )
 }
